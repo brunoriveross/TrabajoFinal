@@ -1,0 +1,43 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <!-- BOTON MENU-->
+    <ion-buttons slot="start">
+      <ion-menu-button auto-hide="true"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="textcenter">Administrador</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card class="custom-card">
+    <img class="card-image" alt="Silhouette of mountains" src="https://i.imgur.com/V0EOU9q.jpg"><ion-card-header>
+      <ion-card-title color="light">Administrar Usuarios</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      Agregar, listar, modificar o eliminar usuarios.
+    </ion-card-content>
+    <ion-button (click)="redirectToListarUser()" expand="full">Ir</ion-button>
+  </ion-card>
+
+  <ion-card class="custom-card">
+    <img class="card-image" alt="Silhouette of mountains" src="https://i.imgur.com/acuttBw.jpg" />
+    <ion-card-header>
+      <ion-card-title color="light">Administrar Alumnos</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      Agregar, listar, modificar o eliminar alumnos.
+    </ion-card-content>
+    <ion-button (click)="redirectToListarAlumno()" expand="full">Ir</ion-button>
+  </ion-card>
+
+  <ion-card class="custom-card">
+    <img class="card-image" alt="Silhouette of mountains" src="https://i.imgur.com/tQ0ldbO.jpg" />
+    <ion-card-header>
+      <ion-card-title color="light">Administrar Profesor</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      Agregar, listar, modificar o eliminar Profesor.
+    </ion-card-content>
+    <ion-button (click)="redirectToListarProfesor()" expand="full">Ir</ion-button>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,54 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <!-- BOTON MENU-->
+    <ion-buttons slot="start">
+      <ion-menu-button auto-hide="true"></ion-menu-button>
+    </ion-buttons>
+    <ion-title >Asignaturas</ion-title> 
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-searchbar (ionChange)="buscarAsiganatura($event)" animated="true" placeholder="Nombre De La Asignatura"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+<!-- Refresher-->
+  <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+<!-- Carta -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Asignaturas</ion-card-title>
+      
+    </ion-card-header>
+    <ion-card-content >
+      <ion-list>
+        <ion-item *ngFor="let aux of listaAsignaturas" [routerLink]="['/asignaturas/', aux.id]">
+          <ion-thumbnail slot="start">
+            <img [src]="aux.imagen" />
+          </ion-thumbnail>
+          <ion-label>
+            <h2>{{ aux.nombre }}</h2>
+            <p class="seccion">sección: {{ aux.seccion }}</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+<!-- BOTON INFERIOR -->
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button>
+      <ion-icon name="chevron-up-circle"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="top">
+      <ion-fab-button>
+        <ion-icon (click)="addAsignatura()" name="add-circle"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+  
+</ion-content>

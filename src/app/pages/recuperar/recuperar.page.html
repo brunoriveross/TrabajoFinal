@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <!-- bOTON Atras-->
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Recuperar Contraseña</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Recuperar Contraseña </ion-card-title>
+      <ion-card-subtitle>Ingrese Nombre De Usuario</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-input label="Usuario:" labelPlacement="floating" placeholder="Ej:Alejandro"></ion-input>
+    </ion-card-content>
+
+
+    <ion-button class="centered" href="login">Recuperar</ion-button>
+
+  </ion-card>
+</ion-content>

@@ -1,0 +1,25 @@
+<ion-header>
+</ion-header>
+
+<ion-content  >
+  <div  class="centered">
+    <ion-card >
+      <img alt="Silhouette of mountains" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Logo_DuocUC.svg/2560px-Logo_DuocUC.svg.png" />
+      <ion-card-header>
+        <ion-card-title>Ingreso</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item >
+          <ion-input #usuario label="Usuario:" labelPlacement="floating" placeholder="Ej: JuanF"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input #contrasenia label="Contraseña:" labelPlacement="floating" placeholder="Ej: qwerty123"></ion-input>
+        </ion-item>
+        <ion-button (click)="login(usuario,contrasenia)">Ingresar</ion-button>
+        <ion-item href="recuperar">
+          <h6 class="ion-text-center">Recuperar Contraseña</h6>
+        </ion-item>        
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

@@ -1,0 +1,27 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/administrador"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Registrar Alumno</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <ion-card>
+    <ion-card-content>
+      <ion-item>
+        <ion-input #usuario type="text" label="Usuario" labelPlacement="floating" placeholder="Ej: aaaa@duoc.cl"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input #contraseña type="text" label="Contraseña" labelPlacement="floating" placeholder="Ej: *"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-select placeholder="Tipo de Usuario">
+          <ion-select-option value="Alumno">Alumno</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-button color="secondary" >Agregar</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

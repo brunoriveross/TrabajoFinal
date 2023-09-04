@@ -1,0 +1,27 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <!-- BOTON MENU-->
+    <ion-buttons slot="start">
+      <ion-menu-button auto-hide="true"></ion-menu-button>
+    </ion-buttons>
+    <!-- BOTON MENU-->
+    <ion-title class="textcenter">Inicio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <div class="centered">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Logo_DuocUC.svg/2560px-Logo_DuocUC.svg.png"/>
+    </div>
+    <ion-card-header *ngFor="let usuario of listaUsuarios">
+        <ion-card-title>Bienvenido {{ usuario.usuario }}</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      Registra la asistencia de manera eficiente en DuocUC con nuestra app móvil: escanea QR y mejora el control de asistencia en tus clases.
+    </ion-card-content>
+  </ion-card>
+
+
+</ion-content>
