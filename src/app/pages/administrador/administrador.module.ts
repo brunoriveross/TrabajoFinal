@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { AdministradorPageRoutingModule } from './administrador-routing.module';
 
 import { AdministradorPage } from './administrador.page';
+import { CartaadminComponent } from 'src/app/components/cartaadmin/cartaadmin.component';
 
 @NgModule({
   imports: [
@@ -15,6 +16,6 @@ import { AdministradorPage } from './administrador.page';
     IonicModule,
     AdministradorPageRoutingModule
   ],
-  declarations: [AdministradorPage]
+  declarations: [AdministradorPage,CartaadminComponent]
 })
 export class AdministradorPageModule {}

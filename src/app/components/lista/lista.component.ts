@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-lista',
@@ -6,7 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./lista.component.scss'],
 })
 export class ListaComponent  implements OnInit {
-
+  @Input() imagen!: string;
+  @Input() nombre!: string;
+  
   constructor() { }
 
   ngOnInit() {}

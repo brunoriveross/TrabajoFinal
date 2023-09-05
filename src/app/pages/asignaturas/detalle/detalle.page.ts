@@ -71,5 +71,8 @@ export class DetallePage implements OnInit {
     await alert.present();
     let resultado = await alert.onDidDismiss();
   }
-  
+  editarAsignatura(asignatura: Asignatura) {
+    console.log(asignatura.id)
+    this.router.navigate(['/editar', asignatura.id]);
+  }
 }

@@ -67,5 +67,8 @@ profesor!: Profesores;
     await alert.present();
     let resultado = await alert.onDidDismiss();
   }
-  
+  editarProfesor(profesor: Profesores) {
+    console.log(profesor.id)
+    this.router.navigate(['/editarp', profesor.id]);
+  }
 }

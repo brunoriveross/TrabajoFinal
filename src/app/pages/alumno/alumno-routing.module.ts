@@ -7,7 +7,21 @@ const routes: Routes = [
   {
     path: '',
     component: AlumnoPage
+  },
+
+  {
+    path: 'detalle',
+    loadChildren: () => import('./detalle/detalle.module').then( m => m.DetallePageModule)
+  },
+  {
+    path: 'agregar',
+    loadChildren: () => import('./agregar/agregar.module').then( m => m.AgregarPageModule)
+  },  {
+    path: 'editara',
+    loadChildren: () => import('./editara/editara.module').then( m => m.EditaraPageModule)
   }
+
+
 ];
 
 @NgModule({

@@ -15,7 +15,7 @@ export class AdministradorPage implements OnInit {
   }
 
   redirectToListarProfesor() {
-    this.router.navigate(['listar-profesor']);
+    this.router.navigate(['prefesores']);
   }
 
   redirectToAgregarAlumno() {
@@ -23,7 +23,10 @@ export class AdministradorPage implements OnInit {
   }
 
   redirectToListarAlumno() {
-    this.router.navigate(['listar-alumno']);
+    this.router.navigate(['alumno']);
+  }
+  redirectToListarAsignatura() {
+    this.router.navigate(['asignaturas']);
   }
 
   redirectToAgregarUser() {

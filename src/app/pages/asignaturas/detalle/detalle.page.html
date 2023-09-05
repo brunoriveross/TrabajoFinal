@@ -15,7 +15,7 @@
 <ion-content [fullscreen]="true">
   <!-- cARTA -->
   <ion-card>
-    <img alt="Silhouette of mountains" src="{{ asignatura.imagen }}" />
+    <img alt="imagen" src="{{ asignatura.imagen }}" />
     <ion-card-header>
       <ion-card-title>{{ asignatura.nombre }}</ion-card-title>
       <ion-card-subtitle>Seccion : {{ asignatura.seccion }}</ion-card-subtitle>
@@ -25,7 +25,9 @@
       Here's a small text description for the card content. Nothing more, nothing less.
     </ion-card-content>
     <ion-button (click)="qr()" shape="round" class="centered">QR</ion-button>
+    <ion-button shape="round" class="centered"  (click)="editarAsignatura(asignatura)">Modificar</ion-button>
   </ion-card>
+ 
 
   <!-- BOTON INFERIOR -->
   <ion-fab slot="fixed" vertical="bottom" horizontal="end">

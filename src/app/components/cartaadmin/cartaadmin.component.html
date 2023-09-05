@@ -1,0 +1,13 @@
+<ion-card class="custom-card">
+  <img class="card-image" alt="admin" src="{{imagen}}"><ion-card-header>
+    <ion-card-title color="light">{{titulo}}</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    Agregar, listar, modificar o eliminar {{tipo}}
+    
+  </ion-card-content>
+  <ion-button *ngIf="mostrarBoton" [routerLink]="['/listar-user']" color="light" size="full" shape="round" >IR</ion-button>
+  <ion-button *ngIf="mostrarBoton2" [routerLink]="['/alumno']" color="light" size="full" shape="round" >IR</ion-button>
+  <ion-button *ngIf="mostrarBoton3" [routerLink]="['/prefesores']" color="light" size="full" shape="round" >IR</ion-button>
+  <ion-button *ngIf="mostrarBoton4" [routerLink]="['/asignaturas']" color="light" size="full" shape="round" >IR</ion-button>
+</ion-card>

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ToastController } from '@ionic/angular';
+import { ProfesoresService } from 'src/app/services/profesores.service';
 
 @Component({
   selector: 'app-agregar',
@@ -7,9 +10,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AgregarPage implements OnInit {
 
-  constructor() { }
+  constructor(
+    private toastController:ToastController,
+    private router:Router,
+    private profesorService : ProfesoresService
+  ) { }
 
   ngOnInit() {
+  }
+  async mensajeToast(mensaje: string){
+    const toast = await this.toastController.create({
+      message: mensaje,
+      duration: 2300,
+      position: 'bottom'
+    });
+    toast.present
+  }
+
+  addProfesor(nombre: any,imagen: any){
+    this.profesorService.addProfesor(nombre.value, imagen.value);
+    this.mensajeToast("Profesor Agregado!");
+    this.router.navigate(['/prefesores'])
   }
 
 }

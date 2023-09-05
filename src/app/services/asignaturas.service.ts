@@ -53,7 +53,19 @@ export class AsignaturasService {
       return aux.id !== id
     })
   }
+  editarAsignatura(asignatura: Asignatura): boolean {
+    const asignaturaExistente = this.asignaturas.find(j => j.id === asignatura.id);
 
+    if (asignaturaExistente) {
+      // Actualiza los datos del jugador existente
+      asignaturaExistente.nombre = asignatura.nombre;
+      asignaturaExistente.imagen = asignatura.imagen;
+      asignaturaExistente.seccion = asignatura.imagen;
+      return true; // Indica éxito
+    }
+
+    return false; // Indica error (jugador no encontrado)
+  }
 
 
 }

@@ -9,19 +9,22 @@ export class UserService {
   usuarios: Usuario[]=[
     {
       id: '1',
-      usuario: 'Bruno Riveros',
-      contrasenia: '1234',
-      tipo: 'Estudiante'
+      usuario: 'bruno',
+      contrasenia: '1234'
     },
     {
       id: '2',
       usuario: 'Francisco Juillet',
-      contrasenia: '1234',
-      tipo: 'Docente'
+      contrasenia: '1234'
     }
   ]
 
   constructor() { }
+
+  validarInicioSesion(usuario: string, contrasenia: string): boolean {
+    const usuarioEncontrado = this.usuarios.find(user => user.usuario === usuario && user.contrasenia === contrasenia);
+    return !!usuarioEncontrado;
+  }
 
   getAll(){
     return[...this.usuarios]

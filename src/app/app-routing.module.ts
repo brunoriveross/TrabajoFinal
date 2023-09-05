@@ -29,8 +29,15 @@ const routes: Routes = [
   },
   {
     path: 'alumno',
-    loadChildren: () => import('./pages/alumno/alumno.module').then(m => m.AlumnoPageModule)
-  },
+    children: [
+      {
+        path: "",
+        loadChildren: () => import('./pages/alumno/alumno.module').then(m => m.AlumnoPageModule)
+      },
+      { path: ':id',
+        loadChildren: () => import('./pages/alumno/detalle/detalle.module').then(m => m.DetallePageModule)
+      }
+    ]},
   {
     path: 'prefesores',
     children: [
@@ -58,6 +65,7 @@ const routes: Routes = [
       { path: ':id',
         loadChildren: () => import('./pages/asignaturas/detalle/detalle.module').then(m => m.DetallePageModule)
       }
+
     ]
 
   },
@@ -96,7 +104,32 @@ const routes: Routes = [
   {
     path: 'agregar',
     loadChildren: () => import('./pages/asignaturas/agregar/agregar.module').then(m => m.AgregarPageModule)
+  },
+  {
+    path: 'agregarp',
+    loadChildren: () => import('./pages/prefesores/agregar/agregar.module').then(m => m.AgregarPageModule)
+  },
+  {
+    path: 'editar/:id',
+    loadChildren: () => import('./pages/asignaturas/editar/editar.module').then( m => m.EditarPageModule)
+  },
+  {
+    path: 'editarp/:id',
+    loadChildren: () => import('./pages/prefesores/editarp/editarp.module').then( m => m.EditarpPageModule)
+  },
+  {
+    path: 'agregarAlumno',
+    loadChildren: () => import('./pages/alumno/agregar/agregar.module').then(m => m.AgregarPageModule)
   }
+  ,
+  {
+    path: 'editara/:id',
+    loadChildren: () => import('./pages/alumno/editara/editara.module').then( m => m.EditaraPageModule)
+  },  {
+    path: 'asitencia',
+    loadChildren: () => import('./pages/asitencia/asitencia.module').then( m => m.AsitenciaPageModule)
+  }
+
 ];
 
 @NgModule({

@@ -27,8 +27,8 @@ export class PrefesoresPage implements OnInit {
     ionViewWillEnter() {
       this.listaProfesores = this.profesoresservice.getAll();
     }
-    addAsignatura() {
-      this.router.navigate(['/agregar']);
+    addProfesor() {
+      this.router.navigate(['/agregarp']);
     }
   
     listar() {

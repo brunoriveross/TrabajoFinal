@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="/Asignaturas"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Editar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="stacked">Nombre de la Asignatura</ion-label>
+        <ion-input type="text" [(ngModel)]="asignatura.nombre"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Seccion</ion-label>
+        <ion-input type="text" [(ngModel)]="asignatura.seccion"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">URL de la Imagen</ion-label>
+        <ion-input type="text" [(ngModel)]="asignatura.imagen"></ion-input>
+      </ion-item>
+
+      <ion-button (click)="editarAsignatura()">Guardar Cambios</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

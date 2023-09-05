@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
-import { Usuario } from '../usuario/usuario.model';
-import { ToastButton, ToastController } from '@ionic/angular';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +10,8 @@ import { ToastButton, ToastController } from '@ionic/angular';
 })
 export class LoginPage implements OnInit {
 
-  listaUsuarios: Usuario[]=[];
+  usuario: string = '';
+  contrasenia: string = '';
 
   constructor(
     private router: Router,
@@ -30,10 +30,14 @@ export class LoginPage implements OnInit {
     toast.present()
   }
 
-  login(usuario: any, pass:any){
-    this.usuarioService.getUser(usuario.value, pass.value);
-    this.mensajeToast("Bienvenido al sistema!")
-    this.router.navigate(['home']);
-  }
+  login() {
+    const esValido = this.usuarioService.validarInicioSesion(this.usuario, this.contrasenia);
 
+    if (esValido) {
+      this.mensajeToast("Bienvenido al Sistema!");
+      this.router.navigate(['home']);
+    } else {
+      this.mensajeToast("Credenciales incorrectas");
+    }
+  }
 }

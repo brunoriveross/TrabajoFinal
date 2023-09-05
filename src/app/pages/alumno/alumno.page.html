@@ -4,12 +4,49 @@
     <ion-buttons slot="start">
       <ion-menu-button auto-hide="true"></ion-menu-button>
     </ion-buttons>
-    <ion-title class="textcenter">Alumno</ion-title>
+    <ion-title >Alumnos</ion-title> 
+  </ion-toolbar>
+
+  <!-- Buscador-->
+  <ion-toolbar>
+    <ion-searchbar (ionChange)="buscarAlumno($event)" animated="true" placeholder="Alumno:"></ion-searchbar>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content>
+  
+<!-- Refresher-->
+  <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
 
-  <app-lista></app-lista>
+<!-- Carta -->
 
+      <ion-list>
+        <ion-item *ngFor="let aux of listaAlumnos" [routerLink]="['/alumno/', aux.id]">
+          <div class="img-profile">
+            <ion-avatar slot="start">
+              <ion-img [src]="aux.imagen"></ion-img>
+            </ion-avatar>
+          </div>
+          <ion-label>
+            <h2>{{ aux.nombre }}</h2>
+            <p class="carrera">Carrera: {{ aux.carrera }}</p>
+            <p class="seccion">Sección: {{ aux.seccion }}</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+
+<!-- BOTON INFERIOR -->
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button>
+      <ion-icon name="chevron-up-circle"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="top">
+      <ion-fab-button>
+        <ion-icon (click)="addAlumno()" name="add-circle"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+  
 </ion-content>

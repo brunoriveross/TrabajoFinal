@@ -7,7 +7,11 @@ const routes: Routes = [
   {
     path: '',
     component: AsignaturasPage
+  },  {
+    path: 'editar',
+    loadChildren: () => import('./editar/editar.module').then( m => m.EditarPageModule)
   },
+
 ];
 
 @NgModule({

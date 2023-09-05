@@ -50,6 +50,18 @@ export class ProfesoresService {
       return aux.id !== id
     })
   }
+  editarProfesor(profesor: Profesores): boolean {
+    const asignaturaExistente = this.profesor.find(j => j.id === profesor.id);
+
+    if (asignaturaExistente) {
+      // Actualiza los datos del jugador existente
+      asignaturaExistente.nombre = profesor.nombre;
+      asignaturaExistente.imagen = profesor.imagen;
+      return true; // Indica éxito
+    }
+
+    return false; // Indica error (jugador no encontrado)
+  }
 
 
 }
