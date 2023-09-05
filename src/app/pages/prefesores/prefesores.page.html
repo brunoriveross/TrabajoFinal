@@ -1,22 +1,43 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-
-    <!-- BOTON MENU-->
+    <!-- BOTÓN DE MENÚ -->
     <ion-buttons slot="start">
       <ion-menu-button auto-hide="true"></ion-menu-button>
     </ion-buttons>
-    <ion-title class="textcenter">Profesores</ion-title>
-
+    <ion-title >Profesores</ion-title>
+  </ion-toolbar>
+  <!-- Buscador -->
+  <ion-toolbar>
+    <ion-searchbar (ionChange)="buscarProfesores($event)" animated="true" placeholder="Nombre Del Profesor"></ion-searchbar>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <!-- Refresher-->
+  <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <!-- Lista -->
   <ion-list>
-    <ion-item *ngFor="let aux of listaProfesores">
-      <ion-avatar slot="end">
+    <ion-item *ngFor="let aux of listaProfesores" [routerLink]="['/prefesores/', aux.id]">
+      <ion-avatar slot="start">
         <ion-img [src]="aux.imagen"></ion-img>
       </ion-avatar>
       {{ aux.nombre }}
     </ion-item>
   </ion-list>
+
+
+  <!-- BOTON INFERIOR -->
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button>
+      <ion-icon name="chevron-up-circle"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="top">
+      <ion-fab-button>
+        <ion-icon (click)="addAsignatura()" name="add-circle"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
 </ion-content>

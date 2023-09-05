@@ -23,4 +23,34 @@ export class PrefesoresPage implements OnInit {
     detalle() {
       this.router.navigate(['detalle']);
     }
+
+    ionViewWillEnter() {
+      this.listaProfesores = this.profesoresservice.getAll();
+    }
+    addAsignatura() {
+      this.router.navigate(['/agregar']);
+    }
+  
+    listar() {
+      this.listaProfesores = this.profesoresservice.getAll();
+    }
+  
+    handleRefresh(event: any) {
+      setTimeout(() => {
+        this.listar();
+        event.target.complete();
+      }, 2000);
+    }
+  
+    buscarProfesores(event: any) {
+      const texto = event.target.value;
+      if (texto && texto.trim() != '') {
+        this.listaProfesores = this.listaProfesores.filter((aux: any) => {
+          // BUSCANDO CUALQUIER COINCIDENCIA EN MAYUS O MINUS
+          return (aux.nombre.toLowerCase().indexOf(texto.toLowerCase()) >- 1);
+        })
+      } else {
+        this.listar();
+      }
+    }
 }

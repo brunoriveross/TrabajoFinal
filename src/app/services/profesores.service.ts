@@ -39,6 +39,17 @@ export class ProfesoresService {
       })
     }
   }
+  addProfesor(nombre:string, imagen:string){
+    this.profesor.push({
+      nombre,imagen, id: this.profesor.length + 1 + ""
+    })
+  }
+  
+  deleteProfesor(id: string) {
+    this.profesor = this.profesor.filter( aux => {
+      return aux.id !== id
+    })
+  }
 
 
 }

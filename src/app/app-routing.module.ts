@@ -39,7 +39,7 @@ const routes: Routes = [
         loadChildren: () => import('./pages/prefesores/prefesores.module').then(m => m.PrefesoresPageModule)
       },
       { path: ':id',
-        loadChildren: () => import('./pages/asignaturas/detalle/detalle.module').then(m => m.DetallePageModule)
+        loadChildren: () => import('./pages/prefesores/detalle/detalle.module').then(m => m.DetallePageModule)
       }
     ]
 
